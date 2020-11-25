@@ -1,10 +1,12 @@
 package com.e.mysensordata2
 
 import android.content.Context
+import android.content.Intent
 import android.hardware.Sensor
 import android.hardware.SensorManager
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -28,5 +30,12 @@ class MainActivity : AppCompatActivity() {
         }
 
         textView.text = sensorText
+
+        next_view.setOnClickListener(View.OnClickListener {
+            val intent = Intent(this, MainActivity2::class.java)
+            startActivity(intent)
+        })
+
+
     }
 }
